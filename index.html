@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap" rel="stylesheet">
+</head>
+<style>
+    *{
+        background-color: rgb(158, 243, 240);
+    }
+    #container{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+}
+#container2{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-direction: row;
+}
+#container3{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-direction: row;}
+#font{
+    display: flex;
+       
+        justify-content: center;
+        font-family: 'Grape Nuts', cursive;
+
+}
+#btn{
+    width: 500px;
+    height: 50px;
+}
+
+    
+</style>
+<body>
+    <h1 id="font">rock paper scissors</h1>
+    <div>
+    <div id="container">
+        <div id="box1">
+    <h2>user choice</h2>
+    <p id="user" style="font-size:50px;"></p>
+    <img src="--" id="user_pic" width="200px" height="200px">
+</div>
+
+<div id="box2">
+    <h2>
+        computer choice
+    </h2>
+    <p id="cmp_choice"style="font-size:50px;"></p>
+    <img src="--" id="cmp_pic" width="200px" height="200px" style="margin-left: 50px;" >
+</div>
+
+</div>
+<div id="container2">
+
+
+<p id="winner" style="font-size:30px ;"></p>
+</div>
+
+
+<div id="container3">
+<button id="btn">click</button>
+</div>
+
+
+</div>
+
+    <script>
+
+    document.getElementById("btn").addEventListener("click", myfunction);
+        function myfunction(){
+            var word= prompt("rock paper scissors shoot");
+            document.getElementById("user").innerText =word;
+            
+            rps =["rock", "paper", "scissors"];
+            let a= Math.floor(Math.random()*3);
+            document.getElementById("cmp_choice").innerHTML=rps[a];
+            
+             if (word == "rock") {
+                document.getElementById("user_pic").src="https://www.seekpng.com/png/detail/816-8161371_rock-paper-scissor-icon-png.png";
+            }
+                if (word == "scissors") {
+                document.getElementById("user_pic").src="https://www.seekpng.com/png/detail/111-1114370_rock-paper-scissors-rock-paper-scissors-clipart.png";}
+                if (word== "paper") {
+                document.getElementById("user_pic").src="https://www.pngitem.com/pimgs/m/266-2667252_transparent-rock-paper-scissors-clipart-rock-paper-scissors.png";}
+                if (a == 0) {
+                document.getElementById("cmp_pic").src="https://www.seekpng.com/png/detail/816-8161371_rock-paper-scissor-icon-png.png";
+            }
+                if (a== 2) {
+                document.getElementById("cmp_pic").src="https://www.seekpng.com/png/detail/111-1114370_rock-paper-scissors-rock-paper-scissors-clipart.png";}
+                if (a == 1) {
+                document.getElementById("cmp_pic").src="https://www.pngitem.com/pimgs/m/266-2667252_transparent-rock-paper-scissors-clipart-rock-paper-scissors.png";}
+            
+                if(word == "rock" && a==2){
+                    document.getElementById("winner").innerHTML ="user wins"
+                }
+               if(word == "scissors" && a==1){
+                    document.getElementById("winner").innerHTML ="user wins"
+                }
+                if(word == "paper" && a==0){
+                    document.getElementById("winner").innerHTML ="user wins"
+                }
+                if(word == "rock" && a==1){
+                    document.getElementById("winner").innerHTML ="computer wins"
+                }
+               if(word == "scissors" && a==0){
+                    document.getElementById("winner").innerHTML ="computer wins"
+                }
+                if(word == "paper" && a==2){
+                    document.getElementById("winner").innerHTML ="computer wins"
+                }
+                
+                if(word==rps[a]){
+                    document.getElementById("winner").innerHTML ="draw"
+
+                
+            }
+      
+    }
+
+
+    
+                
+                
+            
+
+
+    </script>
+    
+    
+</body>
+</html>
